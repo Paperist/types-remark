@@ -1,0 +1,29 @@
+{
+  "name": "@paperist/types-remark",
+  "description": "TypeScript type definitions for wooorm/remark plugins.",
+  "author": "3846masa <3846masahiro+git@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/Paperist/types-remark#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Paperist/types-remark.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Paperist/types-remark/issues"
+  },
+  "version": "0.0.0",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {},
+  "peerDependencies": {
+    "remark-parse": "^4.0.0"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "remark",
+    "typescript"
+  ],
+  "types": "src/index.d.ts"
+}
