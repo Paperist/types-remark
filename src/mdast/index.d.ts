@@ -3,7 +3,6 @@
 // Definitions by: 3846masa <https://github.com/3846masa>
 // Definitions:
 
-import '../unist';
 declare module 'mdast' {
   import { UNIST } from 'unist';
 
