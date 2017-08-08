@@ -15,6 +15,7 @@ declare module 'remark-parse' {
 
     interface Eat {
       (subvalue: string): RemarkParse.Add;
+      now(): UNIST.Position;
     }
 
     interface Locator {
