@@ -18,7 +18,8 @@
   },
   "dependencies": {},
   "peerDependencies": {
-    "remark-parse": "^4.0.0"
+    "remark-parse": "^4.0.0",
+    "unist-util-visit": "^1.1.3"
   },
   "devDependencies": {},
   "keywords": [

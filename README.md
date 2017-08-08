@@ -44,13 +44,16 @@ First, you should set `@paperist/types-remark` to `types` in `tsconfig.json`.
 
 ## Supported packages
 
+- [unist-util-visit]
+  - `import * as Visit from 'unist-util-visit';`
 - [remark-parse]
-  - `import * as RemarkParse from 'remark-parse'`
+  - `import * as RemarkParse from 'remark-parse';`
 - [MDAST] (no npm package)
-  - `import { MDAST } from 'mdast'`
+  - `import { MDAST } from 'mdast';`
 - [Unist] (no npm package)
-  - `import { UNIST } from 'unist'`
+  - `import { UNIST } from 'unist';`
 
+[unist-util-visit]: https://github.com/syntax-tree/unist-util-visit
 [remark-parse]: https://github.com/wooorm/remark/tree/master/packages/remark-parse
 [MDAST]: https://github.com/syntax-tree/mdast
 [Unist]: https://github.com/syntax-tree/unist
