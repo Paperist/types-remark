@@ -29,7 +29,7 @@ declare module 'remark-parse' {
     }
 
     interface Tokenizer extends TokenizerFunction {
-      locator: Locator;
+      locator?: Locator;
       onlyAtStart?: boolean;
       notInBlock?: boolean;
       notInList?: boolean;
