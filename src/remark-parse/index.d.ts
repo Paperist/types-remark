@@ -21,14 +21,13 @@ declare module 'remark-parse' {
       (value: string, fromIndex: number): number;
     }
 
-    interface TokenizerFunction {
-      (eat: RemarkParse.Eat, value: string, silent?: boolean):
-        | UNIST.Node
-        | boolean
-        | undefined;
-    }
-
-    interface Tokenizer extends TokenizerFunction {
+    interface Tokenizer {
+      (
+        this: RemarkParse.ParserInstance,
+        eat: RemarkParse.Eat,
+        value: string,
+        silent?: boolean
+      ): UNIST.Node | boolean | undefined;
       locator?: Locator;
       onlyAtStart?: boolean;
       notInBlock?: boolean;
@@ -36,8 +35,35 @@ declare module 'remark-parse' {
       notInLink?: boolean;
     }
 
-    interface RemarkParser {
+    interface ParserInstance {
+      tokenizeBlock(
+        this: RemarkParse.ParserInstance,
+        subvalue: string,
+        now: UNIST.Position
+      ): UNIST.Node[];
+      tokenizeInline(
+        this: RemarkParse.ParserInstance,
+        subvalue: string,
+        now: UNIST.Position
+      ): UNIST.Node[];
+      blockTokenizers: { [key: string]: Tokenizer };
+      blockMethods: string[];
+      inlineTokenizers: { [key: string]: Tokenizer };
+      inlineMethods: string[];
+    }
+
+    interface Parser {
       prototype: {
+        tokenizeBlock(
+          this: RemarkParse.ParserInstance,
+          subvalue: string,
+          now: UNIST.Position
+        ): UNIST.Node[];
+        tokenizeInline(
+          this: RemarkParse.ParserInstance,
+          subvalue: string,
+          now: UNIST.Position
+        ): UNIST.Node[];
         blockTokenizers: { [key: string]: Tokenizer };
         blockMethods: string[];
         inlineTokenizers: { [key: string]: Tokenizer };
@@ -48,7 +74,7 @@ declare module 'remark-parse' {
 
   interface RemarkParse {
     (): () => void;
-    Parser: RemarkParse.RemarkParser;
+    Parser: RemarkParse.Parser;
   }
 
   var RemarkParse: RemarkParse;
